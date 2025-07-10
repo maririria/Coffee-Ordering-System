@@ -22,7 +22,8 @@ A complete coffee ordering web application built with **Next.js** and integrated
 ## 📦 Setup Instructions
 
 ```bash
-git clone https://github.com/yourusername/Coffee-Ordering-System.git
-cd Coffee-Ordering-System
+git clone https://github.com/maririria/Coffee-Ordering-System.git
+cd kaif
+cd cafe
 npm install
 npm run dev
