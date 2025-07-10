@@ -1,0 +1,365 @@
+@import "tailwindcss";
+
+/* Root Theme */
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+/* Base Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'Quicksand', sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+  background-color: #f5efe6;
+}
+
+/* Fonts */
+@font-face {
+  font-family: 'Great Vibes';
+  src: url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+}
+@font-face {
+  font-family: 'Raleway';
+  src: url('https://fonts.googleapis.com/css2?family=Raleway:wght@600&display=swap');
+}
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
+}
+@font-face {
+  font-family: 'CoffeeTown';
+  src: url('/fonts/font2.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'fontSmall';
+  src: url('/fonts/fontsmall.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'fontRusty';
+  src: url('/fonts/rustic-roadway-personal-use.regular.otf') format('truetype');
+}
+
+/* Font Utility Classes */
+.font-Playfair {
+  font-family: 'Playfair Display', serif;
+}
+.font-GreatVibes {
+  font-family: 'Great Vibes', cursive;
+}
+
+/* Animations */
+@keyframes slideUp {
+  0% { opacity: 0; transform: translateY(50px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(40px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes shine {
+  100% { left: 125%; }
+}
+@keyframes marquee {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+/* Animation Classes */
+.animate-slideUp {
+  animation: slideUp 1s ease-out forwards;
+}
+.animate-fadeInUp {
+  animation: fadeInUp 0.8s ease-out both;
+}
+.animate-marquee {
+  animation: marquee 12s linear infinite;
+}
+
+/* Shine Hover */
+.shine-hover {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+.shine-hover::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(120deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.6) 50%, rgba(255,255,255,0.1) 100%);
+  transform: skewX(-20deg);
+}
+.shine-hover:hover::after {
+  animation: shine 1s ease forwards;
+}
+.shine-hover:hover {
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+}
+
+/* Slide Up Button */
+.slide-up-button {
+  background: linear-gradient(to right, #7b3e2e, #3b1f1f);
+  color: white;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 9999px;
+  transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+  border: none;
+  cursor: pointer;
+}
+.slide-up-button:hover {
+  transform: translateY(-4px);
+  background: linear-gradient(to right, #5a2c1f, #2b1512);
+}
+
+/* Experience Button */
+.experience-button {
+  transition: all 0.3s ease;
+}
+.experience-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Hover Utilities */
+.zoom-hover {
+  transition: transform 0.3s ease;
+}
+.zoom-hover:hover {
+  transform: scale(1.05);
+}
+.hover\:scale-105:hover {
+  transform: scale(1.05);
+}
+
+/* Video Transition */
+.slide {
+  transition: opacity 1s ease-in-out;
+}
+
+/* Text and Background Utilities */
+.text-shadow-lg {
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.7);
+}
+.bg-black-70 {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Table Styles */
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+table th, table td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+table thead, table tfoot {
+  background-color: #f3e5dc;
+}
+table thead {
+  color: #4b2e2e;
+}
+table tfoot {
+  font-weight: bold;
+}
+
+/* Buttons */
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.btn-primary {
+  background-color: #6f4e37;
+  color: white;
+}
+.btn-primary:hover {
+  background-color: #5a3e2d;
+}
+.btn-danger {
+  background-color: #c0392b;
+  color: white;
+}
+.btn-danger:hover {
+  background-color: #a93226;
+}
+.btn-blue {
+  background-color: #3498db;
+  color: white;
+}
+.btn-blue:hover {
+  background-color: #2e86c1;
+}
+
+/* Auth Pages */
+.login-body,
+.signup-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #1a1a1a;
+  font-family: sans-serif;
+}
+.login-container,
+.signup-container {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  width: 90%;
+  max-width: 400px;
+}
+.login-container h2,
+.signup-container h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+.login-container form,
+.signup-container form {
+  display: flex;
+  flex-direction: column;
+}
+.login-container input,
+.signup-container input {
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.login-container button,
+.signup-container button {
+  background: #333;
+  color: white;
+  border: none;
+  padding: 0.8rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.login-container button:hover,
+.signup-container button:hover {
+  background: #555;
+}
+.login-container p,
+.signup-container p {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+/* Menu Backgrounds */
+.menu-bg {
+  background-image: url('/images/bg3.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+.menuall-bg {
+  background-image: url('/images/bg2.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+@media (max-width: 768px) {
+  .menuall-bg {
+    background-attachment: scroll;
+  }
+}
+
+/* Card Hover */
+.card-hover {
+  transition: all 0.3s ease-in-out;
+}
+.card-hover:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15);
+}
+.card {
+  background-color: rgba(255, 255, 255, 0.852);
+  padding: 1rem;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-4px);
+}
+
+/* Image Button */
+.image-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+.order-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  background-color: #c70707;
+  color: white;
+  padding: 0.5rem 1.25rem;
+  font-weight: bold;
+  z-index: 10;
+  font-family: 'fontSmall', serif;
+  transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+.image-wrapper:hover .order-button {
+  transform: translate(-50%, -50%) scale(1);
+}
+.order-button:hover {
+  background-color: yellow;
+  color: black;
+}
+.image-wrapper img {
+  max-height: 500px;
+  object-fit: cover;
+}
+
+/* Utility Colors */
+.text-coffee-900 { color: #3e2723; }
+.text-coffee-700 { color: #5d4037; }
+.bg-coffee-50 { background-color: #f3efea; }
+.bg-coffee-100 { background-color: #d7ccc8; }
+.bg-coffee-600 { background-color: #6d4c41; }
+.bg-coffee-700 { background-color: #5d4037; }
+.border-coffee-300 { border-color: #a1887f; }
+.border-coffee-500 { border-color: #6d4c41; }
+.divide-coffee-200 > * + * { border-top-color: #bcaaa4; }
+
+/* Slide Up Utility */
+.slide-up {
+  transition: transform 0.3s ease-out, background-color 0.3s ease-out;
+}
+.slide-up:hover {
+  transform: translateY(-5px);
+  background-color: #4e342e;
+}
+
+/* Override Background */
+body.bg-video {
+  background: none !important;
+}
