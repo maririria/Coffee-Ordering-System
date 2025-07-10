@@ -10,13 +10,13 @@ A complete coffee ordering web application built with **Next.js** and integrated
 - 🖼️ **Gallery Page** – Beautiful images of coffee and ambiance
 - ℹ️ **About Us Page** – Information about the coffee shop
 - 🔐 **Login / Signup** – Authentication for customers
-- 🗄️ **Database Integration** – Connected with backend (e.g., Supabase / MySQL)
+- 🗄️ **Database Integration** – Connected with backend (Supabase)
 
 ## 🛠️ Technologies Used
 
 - [Next.js](https://nextjs.org/) – React framework
 - [Tailwind CSS](https://tailwindcss.com/) – Styling
-- Database: Supabase / MySQL
+- Database: Supabase
 - Git & GitHub for version control
 
 ## 📦 Setup Instructions
